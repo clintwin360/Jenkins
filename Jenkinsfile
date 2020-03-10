@@ -8,8 +8,8 @@ pipeline {
 	                url: 'https://github.com/clintwin360/ClinTwin360_Web'
 	            sh "ls -lat"
 	        }
-    	
-        stage('Build') {
+	    }
+    	stage('Build') {
             steps {
                 echo 'Building..'
             }
