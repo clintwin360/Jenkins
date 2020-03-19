@@ -7,7 +7,10 @@ pipeline {
 	            git branch: 'master',
 	                url: 'https://github.com/clintwin360/ClinTwin360_Web'
 	            sh "ls -lat"
-	        }
+                filename = clintwin_$(date +"%Y%m%d_%H%M%S")
+                zip -r $filename .
+                aws s3 cp $filename s3://clintwin-artifacts/
+            }
 	    }
     	stage('Build') {
             steps {
