@@ -4,6 +4,7 @@ pipeline {
     stages {
     	stage('Checkout ClintWin source') {
 	        steps {
+                step([$class: 'WsCleanup'])
 	            git branch: 'master',
 	                url: 'https://github.com/clintwin360/ClinTwin360_Web'
                 sh "chmod +x ${WORKSPACE}/backup.sh"    
