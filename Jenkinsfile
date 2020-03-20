@@ -6,7 +6,7 @@ pipeline {
 	        steps {
 	            git branch: 'master',
 	                url: 'https://github.com/clintwin360/ClinTwin360_Web'
-                sh "backup.sh"
+                sh "${WORKSPACE}/backup.sh"
             }
 	    }
     	stage('Build') {
