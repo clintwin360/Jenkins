@@ -6,7 +6,7 @@ pipeline {
 	        steps {
 	            git branch: 'master',
 	                url: 'https://github.com/clintwin360/ClinTwin360_Web'
-	            sh "filename=clintwin_\$(date +"%Y%m%d_%H%M%S");zip -r \${filename} .;aws s3 cp \${filename}.zip s3://clintwin-artifacts/"
+                sh "backup.sh"
             }
 	    }
     	stage('Build') {
