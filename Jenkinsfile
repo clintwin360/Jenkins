@@ -29,9 +29,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                //sh "aws autoscaling set-desired-capacity --auto-scaling-group-name clintwin-auto-scaling-gp --desired-capacity 2"    
+                sh "aws autoscaling set-desired-capacity --auto-scaling-group-name clintwin-auto-scaling-gp --desired-capacity 2"    
                 sleep(time:330,unit:"SECONDS")
-                //sh "aws autoscaling set-desired-capacity --auto-scaling-group-name clintwin-auto-scaling-gp --desired-capacity 1"
+                sh "aws autoscaling set-desired-capacity --auto-scaling-group-name clintwin-auto-scaling-gp --desired-capacity 1"
             }
         }
     }
